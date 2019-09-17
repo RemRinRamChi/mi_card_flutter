@@ -32,10 +32,49 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   letterSpacing: 2,
                 ),
-              )
+              ),
+              TextInfoBox(Icons.phone, '+38 324 890 213'),
+              TextInfoBox(Icons.email, 'leorio@knighthood.co'),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class TextInfoBox extends StatelessWidget {
+  final IconData _iconData;
+  final String _textData;
+
+  TextInfoBox(this._iconData, this._textData);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      padding: EdgeInsets.all(
+        10,
+      ),
+      margin: EdgeInsets.symmetric(
+        vertical: 10,
+        horizontal: 25,
+      ),
+      child: Row(
+        children: <Widget>[
+          Icon(
+            _iconData,
+            color: Colors.teal,
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          Text(
+            _textData,
+            style: TextStyle(
+                color: Colors.teal[900], fontFamily: 'Roboto', fontSize: 20),
+          )
+        ],
       ),
     );
   }
